@@ -1,0 +1,22 @@
+export const HORSES_COLORS = [
+    'red',
+    'blue',
+    'green',
+    'yellow',
+    'cyan',
+    'white',
+    'brown',
+    'orange',
+    'pink',
+    'purple',
+    'lime',
+    'magenta',
+    'teal',
+    'indigo',
+    'gold',
+    'skyblue',
+    'navy',
+    'maroon',
+    'olive',
+    'coral'
+];
