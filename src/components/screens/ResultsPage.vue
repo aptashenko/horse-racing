@@ -1,12 +1,13 @@
 <script setup>
 import { useGameStore } from '@/stores/index.js'
 import { storeToRefs } from 'pinia'
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import LapTab from "@/components/LapTab.vue";
 
 const store = useGameStore()
 const { schedule, currentRound } = storeToRefs(store);
 const openedLap = ref(0);
+const sortedParticipants = computed(() => [...schedule.value[openedLap.value].participants].sort((a, b) => a.result - b.result))
 </script>
 
 <template>
@@ -34,7 +35,7 @@ const openedLap = ref(0);
       </thead>
       <tbody>
       <tr
-          v-for="(horse, i) in schedule[openedLap].participants"
+          v-for="(horse, i) in sortedParticipants"
           :key="horse.id"
       >
         <td>
